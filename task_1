@@ -1,0 +1,101 @@
+book1_list = []
+
+with open('book1.txt','r+') as f:
+  book1_contents = f.readlines()
+  for i in range(len(book1_contents)):
+    x = book1_contents[i]
+    y = x.split()
+    book1_list.extend(y)
+
+
+book2_list = []
+
+with open('book2.txt','r+') as g:
+  book2_contents = g.readlines()
+  for j in range(len(book2_contents)):
+    u = book2_contents[j]
+    v = u.split()
+    book2_list.extend(v)
+
+book3_list = []
+
+with open('book3.txt','r+') as h:
+  book3_contents = h.readlines()
+  for k in range(len(book3_contents)):
+    a = book3_contents[k]
+    b = a.split()
+    book3_list.extend(b)
+
+
+def dict_count(listype):
+    new_list = []
+    my_dict = dict()
+    for i in range(len(listype)):
+      s = listype[i]
+      t = s.lower()
+      new_list.append(t)
+
+    for j in range(len(listype)):
+      word = new_list[j]
+      if word in my_dict:
+         my_dict[word] = (my_dict[word]) + 1
+      else:
+         my_dict[word] = 1
+
+    print(my_dict)
+
+
+def word_count(listype):
+    different_words = []
+    base_list = book2_list
+    for i in range(len(listype)):
+        c = listtype[i]
+        length = len(c.split())
+        if listype[i] not in base_list:
+           different_words.append(listype[i])
+    print(different_words)
+
+
+def longest(listype):
+    base_length = 0
+    for i in range(len(listype)):
+        if len (listype[i])  > base_length:
+           longest_word  = listype[i]
+           base_length = len(longest_word)
+    print (longest_word)
+
+
+def lower_case(listype):
+    for word in listype:
+        word = word.lower()
+    print (listype)
+
+
+    
+longest(book2_list)
+longest(book1_list)
+longest(book3_list)
+
+exit()
+
+word = "http://www.gutenberg.org"
+
+
+
+def unwanted(listype):
+    for q in range(len(listype)):  
+        if word in listype[q]:
+           listype.remove(listype[q])
+    print(listype)
+
+
+unwanted(book1_list)
+
+exit()
+       
+lower_case(book2_list)
+lower_case(book1_list)
+lower_case(book3_list)
+
+
+
